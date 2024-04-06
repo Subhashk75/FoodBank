@@ -6,7 +6,7 @@ const Body = ()=>{
                <div className="body-img-donate-btn">
                <img src="src\assets\food4.jpeg"  className="main-body-img" style={{height:"600px" ,marginLeft:"200px"  }} ></img>
         
-               <div key={"donate-ind"} className="donate-btn">
+                <div key={"donate-ind"} className="donate-btn">
                 < Button variant="contained"> Donated Food</Button>
                 </div>
            </div>
