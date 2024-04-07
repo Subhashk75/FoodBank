@@ -2,15 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import App from './App.jsx'
-import Header from './components/Header'
 import About from './components/About'
 import Contact from './components/Contact'
 import Body from './components/Body'
-import Footer from './components/Footer'
 import DonateForm from './components/DonateForm'
 import Profile from './components/Profile'
 import Error from './components/Error'
 import './index.css'
+import Login from "./components/Login";
+import SignUP from "./components/SignUp";
  // call createBrowserRouter for routing different pages
 const appRouter = createBrowserRouter([
   {
@@ -21,7 +21,15 @@ const appRouter = createBrowserRouter([
       // show children component for routing
       {
         path: "/",
-        element: <Body />,
+        element: <Login />,
+      },
+      {
+        path:"/signup",
+        element:<SignUP/>,
+      },
+      {
+         path:"/home",
+         element:<Body/>,
       },
       {
         path: "/about",
@@ -47,3 +55,4 @@ ReactDOM.createRoot(document.getElementById('root')).render(
    <RouterProvider router={appRouter} />
   </React.StrictMode>,
 )
+
