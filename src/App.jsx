@@ -7,6 +7,7 @@ import Footer from './components/Footer'
 
  
 function App() {
+
     return (
       <>
         <Header />
@@ -15,7 +16,5 @@ function App() {
       </>
     );
   };
-  
- 
 
 export default App

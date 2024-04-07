@@ -13,6 +13,7 @@ const Header=()=>{
    <div className="header-container">
     <div key={"header"} className="header">
         <div className="header-logo" >
+        <h2 className="header-title" style={{display:"none" ,height:"0px" ,width:"0px"}}>Food Donate</h2>   
         <Logo/>
         </div>
      <div key={"nav-bar"} className="nav-list">
