@@ -7,6 +7,7 @@ import Contect from './components/Contect'
 import Body from './components/Body'
 import Footer from './components/Footer'
 import DonateForm from './components/DonateForm'
+import Profile from './components/Profile'
  
 function App() {
   const [count, setCount] = useState(0)
@@ -14,10 +15,11 @@ function App() {
   return (
     <>
     {/* <DonateForm></DonateForm> */}
-       <Header />
+    <Profile></Profile>
+       {/* <Header />
        <Body></Body>
        <Footer></Footer>
-      {/*<About></About> */}
+      <About></About> */}
       {/* <Contect></Contect> */}
     </>
   )
