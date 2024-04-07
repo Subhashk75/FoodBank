@@ -4,7 +4,7 @@ const Body = ()=>{
     return (
         <> <div className="body-container">
                <div className="body-img-donate-btn">
-               <img src="src\assets\food4.jpeg"  className="main-body-img" style={{height:"600px" ,marginLeft:"200px"  }} ></img>
+               <img src="src\assets\food4.jpeg"  className="main-body-img"></img>
         
                 <div key={"donate-ind"} className="donate-btn">
                 < Button variant="contained"> Donated Food</Button>
@@ -25,7 +25,7 @@ const Body = ()=>{
                     <img src="src\assets\food5.jpg" className="body-our-work-img"></img>
                  </div>
                  <div className="Door-Pick">
-                    <h2 className="Door-Pick-title">DOOP PICK</h2>
+                    <h2 className="Door-Pick-title">DOOR PICK</h2>
                     <hr className="body-our-work-tag-inline"></hr>
                     <p className="Door-Pick-discription"> "Your donate wiil be immediately collected and sent to needy people"</p>
                     <img src="src\assets\deliverly-img.webp" className="Door-Pick-img"></img>

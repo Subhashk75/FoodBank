@@ -12,7 +12,7 @@ const Footer = () => {
               <p className='footer-contact-email'>Fooddonate@gmail.com</p>
               <div className="contact-phone">
                        <img src="src\assets\phone icon.jpg"></img>
-                       <h2>: XXXXXXXXXX</h2>
+                       <h2>: XXXXXXXX</h2>
                        <br/>
                        <img src="src\assets\facebook icon.webp"></img>
                        <img src="src\assets\instagram-icon.avif"></img>

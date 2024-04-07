@@ -15,11 +15,11 @@ function App() {
   return (
     <>
     {/* <DonateForm></DonateForm> */}
-    <Profile></Profile>
-       {/* <Header />
+    {/* <Profile></Profile> */}
+        <Header />
        <Body></Body>
        <Footer></Footer>
-      <About></About> */}
+    { /* <About></About> */}
       {/* <Contect></Contect> */}
     </>
   )

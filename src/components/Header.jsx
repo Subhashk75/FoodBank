@@ -12,6 +12,7 @@ const Header=()=>{
    <div className="header-container">
     <div key={"header"} className="header">
         <div className="header-logo" >
+        <h2 className="header-title" style={{display:"none" ,height:"0px" ,width:"0px"}}>Food Donate</h2>   
         <Logo/>
         </div>
      <div key={"nav-bar"} className="nav-list">
@@ -19,6 +20,7 @@ const Header=()=>{
             {/* <li>Home</li>
             <li>About</li>
             <li>Contact</li> */}
+         
             <Button variant="contained" >Home</Button>
             <Button variant="contained">About</Button>
             <Button variant="contained">Contact</Button>
