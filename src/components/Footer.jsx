@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import Button from '@mui/material/Button';
 const Footer = () => {
   return (
@@ -20,10 +21,10 @@ const Footer = () => {
                   </div>
                   <h2>Food Donate</h2>
               <div className='footer-contact-btn'>
-              <Button variant="text" style={{color:"black"}}>Home</Button>
-              <Button variant="text" style={{color:"black"}}>About</Button>
-              <Button variant="text" style={{color:"black"}}>Contect</Button>
-              <Button variant="text" style={{color:"black"}}>Profile</Button>
+              <Button variant="text" style={{color:"black"}}><Link to="/" style={{textDecoration :'none'}}>Home</Link></Button>
+              <Button variant="text" style={{color:"black"}}><Link to="/about" style={{textDecoration :'none'}} >About</Link></Button>
+              <Button variant="text" style={{color:"black"}}><Link to="/contact" style={{textDecoration :'none'}}>Contact</Link></Button>
+              <Button variant="text" style={{color:"black"}}><Link to="/profile" style={{textDecoration :'none'}}>Profile</Link></Button>
               </div>
              </div>
         </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link ,Outlet} from "react-router-dom";
 import Button from '@mui/material/Button';
 const Body = ()=>{
     return (
@@ -7,7 +8,7 @@ const Body = ()=>{
                <img src="src\assets\food4.jpeg"  className="main-body-img" style={{height:"600px" ,marginLeft:"200px"  }} ></img>
         
                 <div key={"donate-ind"} className="donate-btn">
-                < Button variant="contained"> Donated Food</Button>
+                < Button variant="contained"><Link to="/donatefood" style={{textDecoration :'none'}}>Donate Food</Link></Button>
                 </div>
            </div>
                 

@@ -1,5 +1,6 @@
 import React from "react";
 import Button from '@mui/material/Button';
+import { Link } from "react-router-dom";
 const Logo = ()=> (
     <div key={"logo"} className="logo">
         <img src="src\assets\logo img.jpeg"></img>
@@ -19,10 +20,10 @@ const Header=()=>{
             {/* <li>Home</li>
             <li>About</li>
             <li>Contact</li> */}
-            <Button variant="contained" >Home</Button>
-            <Button variant="contained">About</Button>
-            <Button variant="contained">Contact</Button>
-            <Button variant="contained">Profile</Button>
+            <Button variant="contained" ><Link to="/" style={{textDecoration :'none'}}>Home</Link></Button>
+            <Button variant="contained"><Link to="/about" style={{textDecoration :'none'}}>About</Link></Button>
+            <Button variant="contained"><Link to="/contact" style={{textDecoration :'none'}}>Contact</Link></Button>
+            <Button variant="contained"><Link to="/profile" style={{textDecoration :'none'}}>Profile</Link></Button>
            
         </ul>
         </div> 
