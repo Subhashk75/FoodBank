@@ -300,6 +300,7 @@ width: 41%;
   width: 63%;
   background-color: rgb(252, 214, 165);
   font-size: 30px;
+  padding-top: 0;
   font-family: sans-serif;
   padding-top: 40px;
 }
@@ -309,6 +310,7 @@ width: 41%;
   align-items: center;
   height: 150px;
   width: 69%;
+  padding-top: 0;
   flex-direction: column;
 }
 .body-our-work-discription{
@@ -320,6 +322,7 @@ width: 41%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding-top: 0;
   gap: 20px;
   width: 100vw;
 }

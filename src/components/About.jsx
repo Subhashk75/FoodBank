@@ -51,7 +51,7 @@ const About = () => {
             strategically targeting areas with high food waste potential.</p>
       </div>
     </div>
-    <div className='About-container' style={{}}>
+    <div className='About-container' style={{display:"flex",justifyContent:"space-between"}}>
      <Cards Name={"subhash kumawat"}  Discription={"Hello,  my self subhash kumawat from jaipur Rajsthan ,Student of National institute of technology Patna in Branch of computer science and engineering, i am working in 2 year in fullstack developer in Reactjs  "}></Cards>
      <Cards Name={"Rajesh kumawat "}  Discription={"Hello,  my self Rajesh kumawat from jaipur Rajsthan ,Student of National institute of technology Patna in Branch of computer science and engineering, i am working in 2 year in fullstack developer in Reactjs  "}></Cards>
       <Cards Name={"Abishek goyal"}  Discription={"Hello,  my self Abishek goyal from jaipur Rajsthan ,Student of IIIT Bhagalpur in Branch of Electronic communication and engineering, i am working in 2 year in fullstack developer in Reactjs  "}></Cards>
