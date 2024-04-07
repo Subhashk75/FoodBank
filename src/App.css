@@ -408,3 +408,49 @@ width: 41%;
 }
 
 }
+
+.mission-container{
+  box-shadow: 10px 10px 5px lightblue;
+  margin-top: 40px;
+  display: flex;
+  width: 100vw;
+  gap: 30px;
+}
+.mission-image{
+  margin-left:200px ;
+  width: 50%;
+}
+.mission-text{
+  font-size: 30px;
+  width: 50%;
+}
+.vision-container{
+  box-shadow: 10px 10px 5px lightblue;
+  margin-top: 40px;
+  display: flex;
+  width: 100vw;
+  gap: 30px;
+}
+.vision-image{
+  padding-left: 100px; 
+  width: 50%;
+}
+.vision-text{
+  font-size: 30px;
+  width: 50%;
+}
+.future_plan-container{
+  box-shadow: 10px 10px 5px lightblue;
+  margin-top: 40px;
+  display: flex;
+  width: 100vw;
+  gap: 30px;
+}
+.future_plan-image{
+  margin-left:200px ;
+  width: 50%;
+}
+.future_plan-text{
+  font-size: 23px;
+  width: 50%;
+}

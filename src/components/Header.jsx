@@ -21,7 +21,7 @@ const Header=()=>{
             {/* <li>Home</li>
             <li>About</li>
             <li>Contact</li> */}
-            <Button variant="contained" ><Link to="/" style={{textDecoration :'none'}}>Home</Link></Button>
+            <Button variant="contained" ><Link to="/home" style={{textDecoration :'none'}}>Home</Link></Button>
             <Button variant="contained"><Link to="/about" style={{textDecoration :'none'}}>About</Link></Button>
             <Button variant="contained"><Link to="/contact" style={{textDecoration :'none'}}>Contact</Link></Button>
             <Button variant="contained"><Link to="/profile" style={{textDecoration :'none'}}>Profile</Link></Button>
