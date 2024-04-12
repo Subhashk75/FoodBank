@@ -4,32 +4,44 @@ const Contact=()=>{
   return (
       <>
       <div className="contact-page">
-          <img src="src\assets\contact img.jpg" ></img>
-          <div className="contact-form"> 
-              <h1>Contact Us</h1>
-              <br></br><br></br><br></br>
-              <form>
-                  <input type="text" placeholder="Full Name"/><br></br><br></br><br></br>
-                  <input type="email" placeholder="Email address"/><br></br><br></br><br></br>
-                  <input type="textarea" placeholder="type your message here"/><br></br><br></br>
-                  <button type="submit" >submit</button>
-              </form>
-              <div className="contact-footer">
-                  <div className="contact-phone">
-                       <img src="src\assets\phone icon.jpg"></img>
-                       <h2>: XXXXXXXXXX</h2>
-                       <img src="src\assets\facebook icon.webp"></img>
-                       <img src="src\assets\instagram-icon.avif"></img>
-                       <img src="src\assets\twitter-icon.webp"></img>
-                  </div>
-                  {/* <div className="contact-social-media">
-                       <img src="src\assets\facebook icon.webp"></img>
-                       <img src="src\assets\instagram-icon.avif"></img>
-                       <img src="src\assets\twitter-icon.webp"></img>
-                  </div> */}
-              </div>
-          </div>
+      <div className="contact-content">
+        <div className="contact-image">
+          {/* <img src="src/assets/contact-img.jpg" alt="Contact Us" /> */}
+        </div>
+        <div className="contact-form">
+          <h1>Contact Us</h1>
+          <form>
+            <input type="text" placeholder="Full Name" />
+            <br />
+            <input type="email" placeholder="Email address" />
+            <textarea placeholder="Type your message here"></textarea>
+            <br />
+            <Button variant="contained" type="submit" >
+              Submit
+            </Button>
+          </form>
+        </div>
       </div>
+      <div className="contact-footer">
+        <div className="contact-info">
+          <div className="contact-item">
+            <img src="src\assets\CALL LOGO.png" alt="Phone Icon" />
+            <h2>+91-XXXXXXXXXX</h2>
+          </div>
+          <div className="social-icons">
+            <a href="https://www.facebook.com" target="_blank">
+              <img src="src\assets\FACBOOKLOGO.png" alt="Facebook" />
+            </a>
+            <a href="https://www.instagram.com" target="_blank">
+              <img src="src\assets\INSTAGRAMLOGO.png" alt="Instagram" />
+            </a>
+            <a href="https://www.twitter.com" target="_blank">
+              <img src="src\assets\TWITTERLOGO.png" alt="Twitter" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
       </>
   );
 }
