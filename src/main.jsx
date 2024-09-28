@@ -14,6 +14,7 @@ import './index.css'
 import SignUP from "./Page/SigupPAge/SignUp.jsx";
 import Login from './Page/LoginPage/Login.jsx';
 import HomePage from './Page/HomePage/HomePage.jsx';
+import BlogAndNew from './components/BlogSection/BlogAndNew.jsx';
  // call createBrowserRouter for routing different pages
 const appRouter = createBrowserRouter([
   {
@@ -41,10 +42,13 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      }, {
+        path: "/about",
+        element: <About />,
       },
       {
-        path: "/stackHolder",
-        element: <StackHolder/>,
+        path: "/BlogAndNew",
+        element: <BlogAndNew/>,
       },
       {
         path: "/profile",
