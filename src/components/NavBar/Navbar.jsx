@@ -18,7 +18,7 @@ const Header=()=>{
         <nav className="nav-list">
           <ul className="ul-header">
             <li>
-              <Button variant="contained" component={Link} to="/home">
+              <Button variant="contained" component={Link} to="/">
                 Home
               </Button>
             </li>
@@ -28,13 +28,13 @@ const Header=()=>{
               </Button>
             </li>
             <li>
-              <Button variant="contained" component={Link} to="/contact">
-                Contact
+              <Button variant="contained" component={Link} to="/facalty&staff">
+                Facalty& Staff
               </Button>
             </li>
             <li>
-              <Button variant="contained" component={Link} to="/profile">
-                Profile
+              <Button variant="contained" component={Link} to="/">
+                Student
               </Button>
             </li>
           </ul>

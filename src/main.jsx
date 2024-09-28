@@ -1,16 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import { createBrowserRouter,RouterProvider } from 'react-router-dom'
 import App from './App.jsx'
-import About from './components/About'
-import Contact from './components/Contact'
-import Body from './components/Body'
-import DonateForm from './components/DonateForm'
+import About from './components/AboutSection/About.jsx'
+import StackHolder from './components/stackHolder/StackHolder.jsx'
+import DonateForm from './Page/DonatePage/DonateForm.jsx'
 import Profile from './components/Profile'
-import Error from './components/Error'
+import Error from './Page/ErrorPage/Error.jsx'
+import RecentAddPost from './components/Recent Add Post/RecentAddPost.jsx';
 import './index.css'
-import Login from "./components/Login";
-import SignUP from "./components/SignUp";
+import SignUP from "./Page/SigupPAge/SignUp.jsx";
+import Login from './Page/LoginPage/Login.jsx';
+import HomePage from './Page/HomePage/HomePage.jsx';
  // call createBrowserRouter for routing different pages
 const appRouter = createBrowserRouter([
   {
@@ -21,23 +24,27 @@ const appRouter = createBrowserRouter([
       // show children component for routing
       {
         path: "/",
-        element: <Login />,
+        element: <HomePage/>,
       },
       {
         path:"/signup",
         element:<SignUP/>,
+      }, {
+        path:"/login",
+        element:<Login/>,
       },
       {
-         path:"/home",
-         element:<Body/>,
+        path:"/RecentAddPost",
+        element:<RecentAddPost/>,
       },
+
       {
         path: "/about",
         element: <About />,
       },
       {
-        path: "/contact",
-        element: <Contact />,
+        path: "/stackHolder",
+        element: <StackHolder/>,
       },
       {
         path: "/profile",

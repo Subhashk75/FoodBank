@@ -3,14 +3,14 @@ import { useState } from "react";
 import Button from '@mui/material/Button';
 import "./DonateFrom.css"
 const DonateForm = () => {
-    const [foodName, setFoodName] = useState();
-    const [mealType, setMealType] = useState();
-    const [mealCategory, setMealCategory] = useState();
-    const [personCount, setPersonCount] = useState();
-    const [personEmail, setPersonEmail] = useState();
-    const [mobile, setMobile] = useState();
+    const [foodName, setFoodName] = useState("");
+    const [mealType, setMealType] = useState("");
+    const [mealCategory, setMealCategory] = useState("");
+    const [personCount, setPersonCount] = useState("");
+    const [personEmail, setPersonEmail] = useState("");
+    const [mobile, setMobile] = useState("");
     const [district, setDistrict] = useState("Patna");
-    const [address, setAddress] = useState();
+    const [address, setAddress] = useState("");
     // console.log(foodName);
     // console.log(mealType);
     console.log(district);
@@ -28,7 +28,7 @@ const DonateForm = () => {
 
                     <label className="parent-label">
                         <p> Food Name </p>
-                        <input id="foodName" style={{ height: "34px" }} type="text" onChange={(e) => {
+                        <input id="foodName" style={{ height: "34px" }} type="text" value={foodName} onChange={(e) => {
                             setFoodName(e.target.value);
                         }} />
                     </label><br></br>
@@ -75,20 +75,20 @@ const DonateForm = () => {
 
                     <label className="parent-label">
                         <p> Quantity(person)</p>
-                        <input type="number" name="personCount" style={{ height: "34px" }} onChange={(e) => {
+                        <input type="number" name="personCount" value={personCount} style={{ height: "34px" }} onChange={(e) => {
                             setPersonCount(e.target.value);
                         }} />
                     </label ><br></br>
                     <label className="parent-label">
                         <p>  Email </p>
-                        <input type="email" style={{ height: "34px" }}
+                        <input type="email" style={{ height: "34px" }} value={personEmail}
                             onChange={(e) => {
                                 setPersonEmail(e.target.value);
                             }} />
                     </label><br></br>
                     <label className="parent-label">
                         <p>  Mobile </p>
-                        <input type="number" style={{ height: "34px" }} onChange={(e) => {
+                        <input type="number" style={{ height: "34px" }} value={mobile} onChange={(e) => {
                             setMobile(e.target.value);
                         }}
                         />
@@ -109,7 +109,7 @@ const DonateForm = () => {
                     </label> <br></br>
                     <label className="parent-label">
                         <p>Address </p>
-                        <input type="text" style={{ height: "34px" }} onChange={(e) => {
+                        <input type="text" style={{ height: "34px" }} value={address} onChange={(e) => {
                             setAddress(e.target.value);
                         }} />
                     </label><br></br>

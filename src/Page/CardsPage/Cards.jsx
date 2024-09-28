@@ -1,29 +1,8 @@
-// import React from 'react'
-// import Button from '@mui/material/Button';
-// const Cards = (props) => {
-//   return (
-//     <>
-
-//     <div className='Card-Container' style={{display:"flex" , justifyContent:"center" ,flexDirection:"column" ,alignItems:"center",width:"300px" ,height:"400px" ,border:"0.8px solid black" , boxShadow:"0px 0px 2px 1px" ,backgroundColor:"aqua"}}>
-    
-//       <img src="src\assets\images 1.png" alt='this is profile picture' style={{ width: "85px",  height: "85px",  borderRadius: "70px" }}></img>
-//       <h3>{props.Name}</h3>
-//       <p>{props.Discription}</p>
-//       <br></br>
-//       <Button variant="contained">Contact Me! </Button>
-//     </div>
-//     </>
-//   )
-// }
-
-// export default Cards;
-
-// Cards.jsx
-
-// Cards.jsx
 
 import React from 'react';
 import Button from '@mui/material/Button';
+import './Cards.css'
+
 
 const Cards = (props) => {
   const handleContactClick = () => {
@@ -42,14 +21,39 @@ const Cards = (props) => {
   };
 
   return (
+    <>
+    {props.Name !=null ?<>
     <div className='Card-Container'>
       <img src="src/assets/images 1.png" alt='Profile Picture' style={{ width: "85px", height: "85px", borderRadius: "50%" }} />
       <h3>{props.Name}</h3>
       <p>{props.Description}</p>
+      </div>
+    </>:<>  </>}
+
+    {props.title!=null ?<>
+      <div className='Card-Container' >
+    <img src="src/assets/images 1.png" alt='Profile Picture' style={{ width: "85px", height: "85px", borderRadius: "50%" }} />
+
+      <h3> <strong>title:</strong> {props.title}</h3>
+      <p><strong>Description:</strong>  {props.Description}</p>
+      <p> <strong>Donate_Amount:</strong> {props.Donate_Amount} </p> 
+      <p>  <strong>Location :</strong>  {props.Location}</p>
+      <p> <strong>Contact:</strong> {props.contact}</p>
+   
+
       <Button variant="contained" onClick={handleContactClick}>
         Contact Me!
       </Button>
     </div>
+    </>:<></>}
+
+      {props.Name1!=null? <> <div className='Card-Container'>
+      <img src={props.image} alt='Profile Picture' style={{ width: "85px", height: "85px", borderRadius: "50%" }} />
+      <h3>{props.Name}</h3>
+      <p>{props.Description}</p>
+      </div> </>:<> {console.log("not blog section")} </>}
+
+  </>
   );
 };
 

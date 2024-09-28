@@ -1,9 +1,8 @@
-import { useState } from 'react'
 import { Outlet} from 'react-router-dom'
 import './App.css'
-import Header from './components/Header'
-
-import Footer from './components/Footer'
+import Header from './components/NavBar/Navbar'
+import NavBarSlider from './components/NavSlider/NavBarSlider'
+import Footer from './components/Footer/Footer'
 
  
 function App() {
@@ -11,6 +10,7 @@ function App() {
     return (
       <>
         <Header />
+        <NavBarSlider/>
         <Outlet />
         <Footer />
       </>
