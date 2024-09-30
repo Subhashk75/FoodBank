@@ -1,25 +1,10 @@
 
 import React from 'react';
-import Button from '@mui/material/Button';
 import './Cards.css'
+import Nav from 'react-bootstrap/Nav';
 
 
 const Cards = (props) => {
-  const handleContactClick = () => {
-    // Define the email address and subject
-    const emailAddress = 'example@example.com';
-    const subject = 'Inquiry from Website';
-
-    // Encode special characters in the subject
-    const encodedSubject = encodeURIComponent(subject);
-
-    // Construct the mailto URL with the email address and subject
-    const mailtoUrl = `mailto:${emailAddress}?subject=${encodedSubject}`;
-
-    // Open the user's default email client with the pre-filled email
-    window.location.href = mailtoUrl;
-  };
-
   return (
     <>
     {props.Name !=null ?<>
@@ -40,10 +25,8 @@ const Cards = (props) => {
       <p>  <strong>Location :</strong>  {props.Location}</p>
       <p> <strong>Contact:</strong> {props.contact}</p>
    
+      <Nav.Link href="http://localhost:5173/AcceptFrom"  style={{backgroundColor:"blueviolet"}}> Contact Me</Nav.Link>
 
-      <Button variant="contained" onClick={handleContactClick}>
-        Contact Me!
-      </Button>
     </div>
     </>:<></>}
 

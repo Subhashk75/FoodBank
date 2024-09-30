@@ -11,6 +11,7 @@ import Profile from './components/Profile'
 import Error from './Page/ErrorPage/Error.jsx'
 import RecentAddPost from './components/Recent Add Post/RecentAddPost.jsx';
 import './index.css'
+import AcceptFrom from './Page/AcceptFromPage/AcceptFrom.jsx'
 import SignUP from "./Page/SigupPAge/SignUp.jsx";
 import Login from './Page/LoginPage/Login.jsx';
 import HomePage from './Page/HomePage/HomePage.jsx';
@@ -43,8 +44,8 @@ const appRouter = createBrowserRouter([
         path: "/about",
         element: <About />,
       }, {
-        path: "/about",
-        element: <About />,
+        path: "/AcceptFrom",
+        element: <AcceptFrom />,
       },
       {
         path: "/BlogAndNew",

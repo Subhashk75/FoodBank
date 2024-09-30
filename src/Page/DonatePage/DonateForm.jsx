@@ -2,29 +2,58 @@ import React from "react";
 import { useState } from "react";
 import Button from '@mui/material/Button';
 import "./DonateFrom.css"
+import axios from "axios";
+
 const DonateForm = () => {
     const [foodName, setFoodName] = useState("");
     const [mealType, setMealType] = useState("");
-    const [mealCategory, setMealCategory] = useState("");
-    const [personCount, setPersonCount] = useState("");
-    const [personEmail, setPersonEmail] = useState("");
-    const [mobile, setMobile] = useState("");
+    const [category, setCategory] = useState("");
+    const [quantity, setQuantity] = useState("");
+    const [email, setEmail] = useState("");
+    const [phoneNo, setPhoneNo] = useState("");
     const [district, setDistrict] = useState("Patna");
     const [address, setAddress] = useState("");
+    const [pincode, setPinCode] = useState("");
+
     // console.log(foodName);
     // console.log(mealType);
-    console.log(district);
     const onChangeMealType = e => {
         setMealType(e.target.value)
     }
-    const onChangeMealCategory = e => {
-        setMealCategory(e.target.value);
+    const onChangCategory = e => {
+        setCategory(e.target.value);
     }
+   
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+    
+        try {
+            const response = await axios.post("http://localhost:8000/api/v1/createPost", {
+                foodName,
+                category,    // Corrected 'category' to 'category'
+                mealType,
+                email,
+                phoneNo,
+                quantity,    // Corrected 'quantity' to 'quantity'
+                pincode,
+                address,
+                district
+            });
+    
+            console.log("Successfully sent email:", response.data);
+        } catch (error) {
+            console.log("An error occurred:", error.message);
+        }
+    };
+    
+    
+
+
     return (
         <div className="donate-container" style={{ backgroundImage: `url('src\assets\vision.jpeg')` }}>            <div className="donate-page">
             <h2>Food Donation</h2>
 
-                <form className="donate-form" >
+                <form className="donate-form" method="POST" onSubmit={handleSubmit} >
 
                     <label className="parent-label">
                         <p> Food Name </p>
@@ -53,20 +82,20 @@ const DonateForm = () => {
                         <p> Select the category</p>
                         <div className="donate-food-selct-category" >
                             <input type="radio" name="mealCategory" value="Raw food" id="Raw food"
-                                checked={mealCategory === "Raw food"}
-                                onChange={onChangeMealCategory}>
+                                checked={category === "Raw food"}
+                                onChange={onChangCategory}>
                             </input>
 
                             <label for="Raw food" className="overlap-img-text">Raw food</label>
                             <input type="radio" name="mealCategory" value="Packaged food" id="Packaged food" style={{ gap: "20px" }}
-                                checked={mealCategory === "Packaged food"}
-                                onChange={onChangeMealCategory}>
+                                checked={category === "Packaged food"}
+                                onChange={onChangCategory}>
                             </input>
 
                             <label for="Packaged food" className="overlap-img-text">Packaged food</label>
                             <input type="radio" name="mealCategory" value="Cooked food" id="Cooked food"
-                                checked={mealCategory === "Cooked food"}
-                                onChange={onChangeMealCategory}>
+                                checked={category === "Cooked food"}
+                                onChange={onChangCategory}>
                             </input>
 
                             <label for="Cooked food" className="overlap-img-text">Cooked food</label>
@@ -75,21 +104,21 @@ const DonateForm = () => {
 
                     <label className="parent-label">
                         <p> Quantity(person)</p>
-                        <input type="number" name="personCount" value={personCount} style={{ height: "34px" }} onChange={(e) => {
-                            setPersonCount(e.target.value);
+                        <input type="number" name="personCount" value={quantity} style={{ height: "34px" }} onChange={(e) => {
+                            setQuantity(e.target.value);
                         }} />
                     </label ><br></br>
                     <label className="parent-label">
                         <p>  Email </p>
-                        <input type="email" style={{ height: "34px" }} value={personEmail}
+                        <input type="email" style={{ height: "34px" }} value={email}
                             onChange={(e) => {
-                                setPersonEmail(e.target.value);
+                                setEmail(e.target.value);
                             }} />
                     </label><br></br>
                     <label className="parent-label">
                         <p>  Mobile </p>
-                        <input type="number" style={{ height: "34px" }} value={mobile} onChange={(e) => {
-                            setMobile(e.target.value);
+                        <input type="number" style={{ height: "34px" }} value={phoneNo} onChange={(e) => {
+                            setPhoneNo(e.target.value);
                         }}
                         />
                     </label><br></br>
@@ -114,7 +143,13 @@ const DonateForm = () => {
                         }} />
                     </label><br></br>
                     <label className="parent-label">
-                        < Button variant="contained" style={{ width: "90px" }}> submit</Button>
+                        <p>Pin Code </p>
+                        <input type="number" style={{ height: "34px" }} value={pincode} onChange={(e) => {
+                            setPinCode(e.target.value);
+                        }} />
+                    </label><br></br>
+                    <label className="parent-label">
+                        < Button variant="contained" style={{ width: "90px" }} type="submit" > submit</Button>
                     </label>
                 </form>
             </div>
