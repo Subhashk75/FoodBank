@@ -1,84 +1,87 @@
-import React from "react";
-import { useState } from "react";
+import React, { useState } from "react";
 import Button from '@mui/material/Button';
+import axios from "axios";
 
-// import "./DonatePage/DonateForm.css"
-const AcceptFrom = () => {
-    const [fName, setFName] = useState("");  
-    const [personCount, setPersonCount] = useState("");
-    const [personEmail, setPersonEmail] = useState("");
-    const [mobile, setMobile] = useState("");
+const AcceptForm = () => {
+    const [fullName, setFullName] = useState("");  
+    const [personcount, setPersonCount] = useState("");
+    const [email, setEmail] = useState("");
+    const [phoneNo, setPhoneNo] = useState("");
     const [district, setDistrict] = useState("Patna");
     const [address, setAddress] = useState("");
     const [pincode, setPinCode] = useState("");
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+
+        // Basic Validation to check required fields
+        if (!fullName || !personcount || !email || !phoneNo || !address || !pincode) {
+            alert("All fields are required");
+            return;
+        }
+
+        try {
+            const response = await axios.post("http://localhost:8000/api/v2/acceptForm", {
+                fullName,
+                email,
+                personcount,
+                phoneNo,
+                pincode,
+                address,
+                district
+            });
+
+            console.log("Successfully sent email:", response.data);
+        } catch (error) {
+            console.log("An error occurred:", error.message);
+        }
+    };
 
     return (
-        <div className="donate-container" >       
-             <div className="donate-page">
-            <h2>Food Donation</h2>
-
-                <form className="donate-form" >
-
+        <div className="donate-container">       
+            <div className="donate-page">
+                <h2>Food Donation</h2>
+                <form className="donate-form" method="POST" onSubmit={handleSubmit}>
                     <label className="parent-label">
-                        <p> NGO Name </p>
-                        <input id="FName" style={{ height: "34px" }} type="text" value={fName} onChange={(e) => {
-                            setFName(e.target.value);
-                        }} />
-                    </label><br></br>
+                        <p>NGO Name</p>
+                        <input id="fullName" style={{ height: "34px" }} type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
+                    </label><br />
                     <label className="parent-label">
-                        <p>  Email </p>
-                        <input type="email" style={{ height: "34px" }} value={personEmail}
-                            onChange={(e) => {
-                                setPersonEmail(e.target.value);
-                            }} />
-                    </label><br></br>
+                        <p>Email</p>
+                        <input type="email" style={{ height: "34px" }} value={email} onChange={(e) => setEmail(e.target.value)} />
+                    </label><br />
                     <label className="parent-label">
-                        <p> Quantity(person)</p>
-                        <input type="number" name="personCount" value={personCount} style={{ height: "34px" }} onChange={(e) => {
-                            setPersonCount(e.target.value);
-                        }} />
-                    </label ><br></br>
-                   
+                        <p>Quantity (person)</p>
+                        <input type="number" name="personcount" value={personcount} style={{ height: "34px" }} onChange={(e) => setPersonCount(e.target.value)} />
+                    </label><br />
                     <label className="parent-label">
-                        <p>  Mobile </p>
-                        <input type="number" style={{ height: "34px" }} value={mobile} onChange={(e) => {
-                            setMobile(e.target.value);
-                        }}
-                        />
-                    </label><br></br>
-                    <label for="districts" className="parent-label">District:
-                        <select id="districts" name="districts" style={{ height: "34px" }}
-                            value={district}
-                            onChange={
-                                e => setDistrict(e.target.value)
-                            } >
+                        <p>Phone Number</p>
+                        <input type="number" style={{ height: "34px" }} value={phoneNo} onChange={(e) => setPhoneNo(e.target.value)} />
+                    </label><br />
+                    <label htmlFor="districts" className="parent-label">District:
+                        <select id="districts" name="districts" style={{ height: "34px" }} value={district} onChange={(e) => setDistrict(e.target.value)}>
                             <option value="Patna">Patna</option>
                             <option value="Mumbai">Mumbai</option>
-                            <option value="Mumbai">Jaipur</option>
-                            <option value="Mumbai">Delhi</option>
-
+                            <option value="Jaipur">Jaipur</option>
+                            <option value="Delhi">Delhi</option>
                             <option value="Chandigarh">Chandigarh</option>
                         </select>
-                    </label> <br></br>
+                    </label><br />
                     <label className="parent-label">
-                        <p>Address </p>
-                        <input type="text" style={{ height: "34px" }} value={address} onChange={(e) => {
-                            setAddress(e.target.value);
-                        }} />
-                    </label><br></br>
+                        <p>Address</p>
+                        <input type="text" style={{ height: "34px" }} value={address} onChange={(e) => setAddress(e.target.value)} />
+                    </label><br />
                     <label className="parent-label">
-                        <p>Pin Code </p>
-                        <input type="number" style={{ height: "34px" }} value={pincode} onChange={(e) => {
-                            setPinCode(e.target.value);
-                        }} />
-                    </label><br></br>
+                        <p>Pin Code</p>
+                        <input type="number" style={{ height: "34px" }} value={pincode} onChange={(e) => setPinCode(e.target.value)} />
+                    </label><br />
                     <label className="parent-label">
-                        < Button variant="contained" style={{ width: "90px" }}> submit</Button>
+                        <Button variant="contained" type="submit" style={{ width: "90px" }}>Submit</Button>
                     </label>
                 </form>
             </div>
         </div>
     );
-}
-export default AcceptFrom;
+};
+
+export default AcceptForm;
