@@ -16,6 +16,7 @@ import SignUP from "./Page/SigupPAge/SignUp.jsx";
 import Login from './Page/LoginPage/Login.jsx';
 import HomePage from './Page/HomePage/HomePage.jsx';
 import BlogAndNew from './components/BlogSection/BlogAndNew.jsx';
+import FQApage from './Page/FQAPage/FQApage.jsx';
  // call createBrowserRouter for routing different pages
 const appRouter = createBrowserRouter([
   {
@@ -38,6 +39,9 @@ const appRouter = createBrowserRouter([
       {
         path:"/RecentAddPost",
         element:<RecentAddPost/>,
+      },{
+        path:"/FQA",
+        element:<FQApage/>
       },
 
       {

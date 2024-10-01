@@ -116,8 +116,6 @@
  .about-div-container{
     height: 400px;
     width: 45%;
-    background-color: rgb(243, 244, 246);
-    box-shadow: 2px 2px 2px burlywood;
     margin-top: 9px;
     border-radius: 25px;
      /* Dynamic font size based on the viewport width */
@@ -125,8 +123,10 @@
     overflow: hidden; /* Ensures content doesn't overflow */
     text-overflow: ellipsis;
  }
-
-
+  
+ .about-div-container:hover{
+  box-shadow: 6px 6px 7px bisque;
+ }
   
   /* Responsive Styles */
   @media (min-width:700px) {

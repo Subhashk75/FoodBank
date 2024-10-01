@@ -33,7 +33,10 @@ const About = () => {
   };
   return (
     <>
+        <h1 style={{marginLeft:"10px" ,marginTop:"20px" }}  >About Us</h1>
+
         <div className='about-container'>
+
         <div className="sliders">
             <div
                 className="lists"
@@ -55,11 +58,11 @@ const About = () => {
             </div>
        
         </div>
+
         <div className='about-div-container'>
-          <h3>About Us</h3>
           <p>
-          A food bank is a charitable organization that collects, stores, and distributes food to individuals and families facing hunger or food insecurity.
-           Food banks typically partner with local grocery stores, farms, food manufacturers, and community groups to source surplus food that would otherwise 
+           <strong> A food bank is a charitable organization that collects, stores, and distributes food to individuals and families facing hunger or food insecurity.
+           </strong>    Food banks typically partner with local grocery stores, farms, food manufacturers, and community groups to source surplus food that would otherwise 
            go to waste. They distribute this food through direct service or collaborate with local food pantries, shelters, and other non-profit agencies.
            Through volunteer efforts, donations, and partnerships, food banks help ensure that vulnerable populations—such as low-income families, the elderly, 
            and children—have access to food and resources necessary for a healthy life.
@@ -67,15 +70,17 @@ const About = () => {
           </p>
 
         </div>
+
         </div>
-        
-        <div className='mission-container' style={{marginTop:"10px"}}>
+        <h1 style={{marginLeft:"10px" ,marginTop:"20px" }}  >OUR MISSION</h1>
+
+        <div className='mission-container' style={{marginTop:"10px" ,backgroundColor:"transparent"}}>
         <div className='mission-image'>
-          <img src='./src/assets/Designer (7).png' alt='Mission' width='200px' height='200px' />
+          <img src='./src/assets/Designer (7).png' alt='Mission' width='400px' height='400px' />
         </div>
         <div className='mission-text'>
-          <p>
-            Our mission is to bridge the gap between food donors and NGOs, ensuring that surplus food is efficiently redirected to those in need. We are committed to minimizing food waste and promoting sustainability by creating a seamless platform that connects food donors with local organizations, ultimately fostering a community-driven effort to combat hunger and reduce environmental impact.
+          <p style={{fontSize:"20px"}}>
+           <strong>Our mission is to bridge the gap between food donors and NGOs, ensuring that surplus food is efficiently redirected to those in need. We are committed to minimizing food waste and promoting sustainability by creating a seamless platform that connects food donors with local organizations, ultimately fostering a community-driven effort to combat hunger and reduce environmental impact.</strong> 
           </p>
         </div>
       </div>

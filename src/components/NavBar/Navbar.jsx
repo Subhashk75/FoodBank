@@ -5,7 +5,8 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS
+import 'font-awesome/css/font-awesome.min.css'; // Font Awesome CSS
 const NavScrollExample = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
@@ -14,13 +15,13 @@ const NavScrollExample = () => {
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav className="me-auto my-2 my-lg-0" style={{ maxHeight: '100px' }} navbarScroll>
-            <Nav.Link href="#home">
-              <i className="fa fa-home"></i> 
+          <Nav.Link href="/">
+              <i className="fa fa-home"></i> Home
             </Nav.Link>
 
             {/* About Us Dropdown */}
             <NavDropdown title="About Us" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#mission">Our Mission</NavDropdown.Item>
+              <NavDropdown.Item href="http://localhost:5173/about">Our Mission</NavDropdown.Item>
               <NavDropdown.Item href="#team">Our Team</NavDropdown.Item>
             </NavDropdown>
 
@@ -40,14 +41,14 @@ const NavScrollExample = () => {
 
             {/* Events Dropdown */}
             <NavDropdown title="Events" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#fqa">FQA</NavDropdown.Item>
+              <NavDropdown.Item href="http://localhost:5173/FQA">FQA</NavDropdown.Item>
               <NavDropdown.Item href="http://localhost:5173/BlogAndNew">Blog and News</NavDropdown.Item>
             </NavDropdown>
 
             {/* Contact Dropdown */}
             <NavDropdown title="Contact" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#email">Email</NavDropdown.Item>
-              <NavDropdown.Item href="#instagram">Instagram</NavDropdown.Item>
+              <NavDropdown.Item href="mailto:Fooddonate@gmail.com" target='_blank'>Email</NavDropdown.Item>
+              <NavDropdown.Item href="https://twitter.com" target='_blank'>Twiter</NavDropdown.Item>
             </NavDropdown>
           </Nav>
 
