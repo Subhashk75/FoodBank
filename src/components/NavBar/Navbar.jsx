@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -7,7 +7,27 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Bootstrap CSS
 import 'font-awesome/css/font-awesome.min.css'; // Font Awesome CSS
+import RecentAddPost from "../Recent Add Post/RecentAddPost"
+import { postData  } from '../../Page/ConstantPage/ConstantPage';
 const NavScrollExample = () => {
+   const [search ,setSearch]=useState("");
+   const [recentPost ,setRecentPost]= useState(false); 
+   const [searchdata ,setSearchData] = useState("");
+   
+    const handleCheck=()=>{
+
+      const found = postData.find((data) => data.pincode === search);
+      
+      if(found){
+        setRecentPost(true);
+        setSearchData(found);
+      }else{
+        console.log("error");
+      }
+
+    }
+
+
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
@@ -52,6 +72,10 @@ const NavScrollExample = () => {
             </NavDropdown>
           </Nav>
 
+          {!recentPost &&(()=>{
+              <RecentAddPost searchdata={searchdata} recentPost={recentPost} />
+          })}
+
           {/* Search Form */}
           <Form className="d-flex">
             <Form.Control
@@ -59,8 +83,12 @@ const NavScrollExample = () => {
               placeholder="Search"
               className="me-2"
               aria-label="Search"
+              value={search}
+              onChange={(e)=>{
+                setSearch(e.target.value)
+              }}
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-success" onClick={handleCheck}>Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
