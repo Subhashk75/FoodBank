@@ -74,16 +74,17 @@ const About = () => {
         </div>
         <h1 style={{marginLeft:"10px" ,marginTop:"20px" }}  >OUR MISSION</h1>
 
-        <div className='mission-container' style={{marginTop:"10px" ,backgroundColor:"transparent"}}>
-        <div className='mission-image'>
-          <img src='./src/assets/Designer (7).png' alt='Mission' width='400px' height='400px' />
-        </div>
-        <div className='mission-text'>
-          <p style={{fontSize:"20px"}}>
-           <strong>Our mission is to bridge the gap between food donors and NGOs, ensuring that surplus food is efficiently redirected to those in need. We are committed to minimizing food waste and promoting sustainability by creating a seamless platform that connects food donors with local organizations, ultimately fostering a community-driven effort to combat hunger and reduce environmental impact.</strong> 
-          </p>
-        </div>
-      </div>
+        <div className='mission-container' style={{ marginTop: "10px", backgroundColor: "transparent", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "20px" }}>
+           < div className='mission-image'>
+              <img src='./src/assets/Designer (7).png' alt='Mission' style={{ maxWidth: "100%", height: "auto" }} />
+            </div>
+            <div className='mission-text' style={{ textAlign: "center", marginTop: "20px", maxWidth: "800px" }}>
+              <p style={{ fontSize: "20px" }}>
+                <strong>Our mission is to bridge the gap between food donors and NGOs, ensuring that surplus food is efficiently redirected to those in need. We are committed to minimizing food waste and promoting sustainability by creating a seamless platform that connects food donors with local organizations, ultimately fostering a community-driven effort to combat hunger and reduce environmental impact.</strong>
+              </p>
+            </div>
+          </div>
+
 
     </>
   )

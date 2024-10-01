@@ -1,48 +1,98 @@
-import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import Button from '@mui/material/Button';
+import React, { Component } from 'react';
+import styles from './Footer.module.css';
+import { FaFacebook, FaYoutube, FaTelegram } from "react-icons/fa";
+import { RiInstagramFill } from "react-icons/ri";
+import { FaSquareXTwitter } from "react-icons/fa6";
 
-const Footer = () => {
-  const location = useLocation();
-
-  return (
-    <div className='footer-container'>
-      <div className='footer-about'>
-        <h3 className='footer-about-title'>About us</h3><br />
-        <p className='footer-about-description'>Our mission is to combat food waste and <br /> support individuals in need by rescuing <br />surplus food from various sources like hotels, <br /> restaurants, and event venues. We distribute <br />this rescued food to communities facing food <br />insecurity, ensuring that valuable resources are <br />utilized to their fullest potential, benefiting both <br /> people and the environment.</p>
-      </div>
-      <div className='footer-contact'>
-        <h3 className='footer-contact-title'>Contact Us</h3>
-        <br />
-        {/* <p className='footer-contact-email'>Email :fooddonate123@gmail.com</p> */}
-        
-        <div className="contact-phone">
-          <div className="social-icons">
-            <a href="https:www.whatsapp.com" target="_blank">
-              <img src="src/assets/WHATSAPPLOGO.png" alt="WhatsApp" />
-            </a>
-            <a href="https://www.instagram.com" target="_blank">
-              <img src="src/assets/INSTAGRAMLOGO.png" alt="Instagram" />
-            </a>
-            <a href="https://www.facebook.com" target="_blank">
-              <img src="src\assets\FACBOOKLOGO.png" alt="Facebook" />
-            </a>
-            <a href="mailto:Fooddonate@gmail.com" target="_blank">
-              <img src="src\assets\EMAILLOG.png" alt="Email" />
-            </a>
-            <a href="https://twitter.com" target="_blank">
-              <img src="src\assets\TWITTERLOGO.png" alt="Twitter" />
-            </a>
+class FooterSection extends Component {
+  render() {
+    return (
+      <section className={styles.footer} id="footer">
+        <div className={styles.footerContents}>
+          <div className={`${styles.footerCol} ${styles.footerCol1}`}>
+            <div className={styles.colTitle}>
+              <h3>About Us</h3>
+            </div>
+            <hr className={styles.hrLine} />
+            <div className={styles.colContents}>
+              <ul>
+                <li><a href="#">Our Mission</a></li>
+                <li><a href="#">Impact & Stories</a></li>
+                <li><a href="#">How We Work</a></li>
+                <li><a href="#">Our Team</a></li>
+              </ul>
+            </div>
           </div>
-          <p>Food Donate Centre<br/>123 Main St.<br/>Patna, India<br/>800005<br/><a href="mailto:fooddonate@gmail.com">fooddonate@gmail.com</a></p>
+          <div className={`${styles.footerCol} ${styles.footerCol2}`}>
+            <div className={styles.colTitle}>
+              <h4>Get Involved</h4>
+            </div>
+            <hr className={styles.hrLine} />
+            <div className={styles.colContents}>
+              <ul>
+                <li><a href="#">Donate</a></li>
+                <li><a href="#">Volunteer</a></li>
+                <li><a href="#">Fundraise</a></li>
+                <li><a href="#">Partnerships</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className={`${styles.footerCol} ${styles.footerCol3}`}>
+            <div className={styles.colTitle}>
+              <h4>Get Help</h4>
+            </div>
+            <hr className={styles.hrLine} />
+            <div className={styles.colContents}>
+              <ul>
+                <li><a href="#">Find Food Assistance</a></li>
+                <li><a href="#">Eligibility Criteria</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Locations</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className={`${styles.footerCol} ${styles.footerCol4}`}>
+            <div className={styles.colTitle}>
+              <h4>Resources</h4>
+            </div>
+            <hr className={styles.hrLine} />
+            <div className={styles.colContents}>
+              <ul>
+                <li><a href="#">Annual Report</a></li>
+                <li><a href="#">Food Drive Kit</a></li>
+                <li><a href="#">Nutritional Guidelines</a></li>
+                <li><a href="#">Advocacy</a></li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-      <br />
-      <div className='footer-copyright'>
-        <p>© 2023 Food Donate. All rights reserved.</p>
-      </div>
-    </div>
-  );
+        <div className={styles.footerPart2}>
+          <div className={styles.footerLogo}>
+            <div className={styles.socialMediaAccounts}>
+              <ul className={styles.socialUl}>
+                <li><a href="https://t.me/foodbank" target="main" className={styles.telegram}><FaTelegram className="fab fa-telegram" style={{color:"#1DA1F2",marginLeft:"5px",marginTop:"5px"}} /></a></li>
+                <li><a href="https://www.facebook.com/foodbank" target="main" className={styles.facebook}><FaFacebook className="fab fa-facebook" style={{color:"#2867B2",marginLeft:"5px",marginTop:"5px"}}/></a></li>
+                <li><a href="https://instagram.com/foodbank" target="main" className={styles.instagram}><RiInstagramFill className="fab fa-instagram" style={{color:"#E1306C",marginLeft:"5px",marginTop:"5px"}} /></a></li>
+                <li><a href="https://twitter.com/foodbank" target="main" className={styles.twitter}><FaSquareXTwitter className="fab fa-twitter" style={{color:"#2867B2",marginLeft:"5px",marginTop:"5px"}} /></a></li>
+                <li><a href="https://www.youtube.com/foodbank" target="main" className={styles.youtube}><FaYoutube className="fab fa-youtube" style={{color:"#ff0000",marginLeft:"5px",marginTop:"5px"}} /></a></li>
+              </ul>
+            </div>
+          </div>
+          <div className={styles.footerPart2Col}>
+            <div className={styles.footerPart2Col1}>
+              <h3>Contact Us</h3>
+              <p>1234 Community Drive, City, State, Zip Code</p>
+              <p>Phone: (123) 456-7890 | Email: info@foodbank.org</p>
+            </div>
+          </div>
+        </div>
+        <div className={styles.copyRights}>
+          <p><a href="#">Terms of Use | Privacy Policy</a></p>
+          <p>© 2024 Food Bank Name. All rights reserved.</p>
+        </div>
+      </section>
+    );
+  }
 }
 
-export default Footer;
+export default FooterSection;

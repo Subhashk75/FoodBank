@@ -185,3 +185,21 @@
       border-radius: 10px;
    }
   }
+
+
+  @media (min-width: 768px) {
+    .mission-container {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  
+    .mission-image, .mission-text {
+      flex: 1;
+      margin: 10px;
+    }
+  
+    .mission-text {
+      text-align: left;
+    }
+  }
+  
