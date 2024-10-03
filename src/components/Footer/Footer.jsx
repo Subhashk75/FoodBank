@@ -11,7 +11,7 @@ class FooterSection extends Component {
         <div className={styles.footerContents}>
           <div className={`${styles.footerCol} ${styles.footerCol1}`}>
             <div className={styles.colTitle}>
-              <h3>About Us</h3>
+              <h3 style={{textDecorationColor:"white"}}>About Us</h3>
             </div>
             <hr className={styles.hrLine} />
             <div className={styles.colContents}>

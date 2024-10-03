@@ -76,7 +76,7 @@ const About = () => {
 
         <div className='mission-container' style={{ marginTop: "10px", backgroundColor: "transparent", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "20px" }}>
            < div className='mission-image'>
-              <img src='./src/assets/Designer (7).png' alt='Mission' style={{ maxWidth: "100%", height: "auto" }} />
+              <img src='./src/assets/Designer (7).png' alt='Mission' style={{ maxWidth: "100%", height: "300px" }} />
             </div>
             <div className='mission-text' style={{ textAlign: "center", marginTop: "20px", maxWidth: "800px" }}>
               <p style={{ fontSize: "20px" }}>

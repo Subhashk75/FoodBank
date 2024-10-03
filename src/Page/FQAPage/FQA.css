@@ -1,4 +1,68 @@
-.FQA-container{
-    margin-top: 40px;
-    margin-left: 40px;    
-}
+/* FQA.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+  }
+  
+  .FQA-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .FQA-container h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+  }
+  
+  .FQA-container p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .FQA-container h3:hover {
+    color: #007bff;
+  }
+  
+  .FQA-container p {
+    padding-left: 10px;
+  }
+  
+  /* Mobile responsiveness */
+  @media screen and (max-width: 768px) {
+    .FQA-container {
+      padding: 10px;
+    }
+    
+    .FQA-container h3 {
+      font-size: 1.3rem;
+    }
+    
+    .FQA-container p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* Additional styling for better user experience */
+  .FQA-container div {
+    margin-bottom: 20px;
+  }
+  
+  .FQA-container div:hover {
+    background-color: #f1f1f1;
+    padding: 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+  }
+  
+  

@@ -189,7 +189,7 @@
 
   @media (min-width: 768px) {
     .mission-container {
-      flex-direction: row;
+      flex-direction:row;
       justify-content: space-between;
     }
   
