@@ -1,21 +1,13 @@
 
 import React from 'react';
-import './Cards.css'
 import Nav from 'react-bootstrap/Nav';
 
 
 const Cards = (props) => {
   return (
     <>
-    {props.Name !=null ?<>
-    <div className='Card-Container'>
-      <img src="src/assets/images 1.png" alt='Profile Picture' style={{ width: "85px", height: "85px", borderRadius: "50%" }} />
-      <h3>{props.Name}</h3>
-      <p>{props.Description}</p>
-      </div>
-    </>:<>  </>}
 
-    {props.title!=null ?<>
+    {props.title!==null ?<>
       <div className='Card-Container' >
     <img src="src/assets/images 1.png" alt='Profile Picture' style={{ width: "85px", height: "85px", borderRadius: "50%" }} />
 
@@ -30,11 +22,7 @@ const Cards = (props) => {
     </div>
     </>:<></>}
 
-      {props.Name1!=null? <> <div className='Card-Container'>
-      <img src={props.image} alt='Profile Picture' style={{ width: "85px", height: "85px", borderRadius: "50%" }} />
-      <h3>{props.Name}</h3>
-      <p>{props.Description}</p>
-      </div> </>:<> {console.log("not blog section")} </>}
+  
 
   </>
   );

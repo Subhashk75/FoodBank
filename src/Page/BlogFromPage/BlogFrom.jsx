@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from '@mui/material/Button';
 import './BlogFrom.css'; // Import the CSS file
 import axios from "axios";
-
+import { postData } from "../ConstantPage/ConstantPage";
 const BlogForm = () => {
     const [fullName, setFullName] = useState("");
     const [category, setCategory] = useState("NO");
@@ -32,8 +32,10 @@ const BlogForm = () => {
                         "Content-Type": "multipart/form-data",
                     },
                 });
-
+                
                 console.log("Successfully created blog post:", response.data);
+                postData.push(response.data)
+                console.log(postData);
             } catch (error) {
                 console.log("An error occurred:", error.message);
             }

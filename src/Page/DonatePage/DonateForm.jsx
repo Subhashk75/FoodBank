@@ -3,7 +3,7 @@ import { useState } from "react";
 import Button from '@mui/material/Button';
 import "./DonateFrom.css"
 import axios from "axios";
-
+import { postData } from "../ConstantPage/ConstantPage";
 const DonateForm = () => {
     const [foodName, setFoodName] = useState("");
     const [mealType, setMealType] = useState("");
@@ -40,7 +40,9 @@ const DonateForm = () => {
                 district
             });
     
-            console.log("Successfully sent email:", response.data);
+            console.log("Successfully sent email:", response.data.data[0]);
+            postData.push(response?.data.data[0]);
+            console.log(postData);
         } catch (error) {
             console.log("An error occurred:", error.message);
         }
@@ -149,7 +151,7 @@ const DonateForm = () => {
                         }} />
                     </label><br></br>
                     <label className="parent-label">
-                        < Button variant="contained" style={{ width: "90px" }} type="submit" > submit</Button>
+                        < Button variant="primary" style={{ width: "30px" }} type="submit" > submit</Button>
                     </label>
                 </form>
             </div>

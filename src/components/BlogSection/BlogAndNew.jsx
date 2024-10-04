@@ -1,23 +1,44 @@
-import React from 'react'
-import Cards from '../../Page/CardsPage/Cards';
-import image1 from '../../assets/3028767_6d115.jpg'
-import './Blog.css'
-// import image2 from '../../assets/foodbankst-flow.webp'
-// import image3 from '../../assets/Untitled-design-3.png'
+import React, { useEffect, useState } from 'react';
+import axios from "axios";
+import BlogCard from "../../Page/CardsPage/BlogCard";
+import "./Blog.css";
 
 const BlogAndNew = () => {
-  return (
-    <div className='Blog-contanier'>
-      <h1>blog Section</h1>
-      <div className='team-cards-container' style={{backgroundColor:"transparent" , border:"none"}}>
-          <Cards NewPoint="Rajesh$123" image={`${image1}`} Name1='Rajesh kumawat' Description='Rajesh Kumawat is a third-year Computer Science student at the National Institute of Technology Patna. He possesses a strong understanding of computer science principles and their societal impact. Rajesh excels in frontend development, particularly in ReactJS.' />
-          <Cards NewPoint="Rajesh$123" image={`${image1}`} Name1='Subhash Kumawat' Description='Subhash Kumawat, also from Jaipur, is a dedicated student at the National Institute of Technology Patna pursuing Computer Science and Engineering. Subhash brings valuable skills to our team and is passionate about frontend development, contributing innovative ideas to our projects.' />
-          <Cards NewPoint="Rajesh$123" image={`${image1}`} Name1='Nayandeep Jain' Description='Nayandeep Jain, hailing from Jaipur, is a versatile full-stack MERN developer. Pursuing Computer Science and Engineering at the National Institute of Technology Patna, Nayandeep expertise in both frontend and backend development ensures robust and scalable solutions for our projects.' />
-          <Cards NewPoint="Rajesh$123" image={`${image1}`} Name1='Abhishek Kumawat' Description='Abhishek Kumawat is a proficient frontend developer with a keen interest in machine learning. As a member of our team, Abhishek brings in-depth knowledge of computer science subjects, which enriches our project discussions and outcomes.' />
-        </div>
+  const [posts, setPosts] = useState([]); // Store fetched posts in state
 
+  // Fetch data from API when component mounts
+  useEffect(() => {
+    const fetchPosts = async () => {
+      try {
+        const response = await axios.get("http://localhost:8000/api/v2/BlogData");
+        console.log(response.data);
+        setPosts(response.data); // Update the state with fetched data
+      } catch (error) {
+        console.error("Error fetching post data:", error);
+      }
+    };
+
+    fetchPosts(); // Call the async function inside useEffect
+  }, []);
+
+  return (
+    <div className='blog-container'>
+      <h1>Blog Section</h1>
+      <div className='blog-cards-container'>
+        {/* Map over the fetched posts instead of static data */}
+        {posts.map((Data, index) => (
+          <div key={index} className='blog-card-wrapper'>
+            <BlogCard
+              image={Data.image}
+              content={Data.content}
+              title={Data.title}
+              author={Data.author}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
 
-export default BlogAndNew
+export default BlogAndNew;

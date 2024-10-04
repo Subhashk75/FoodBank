@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import Cards from '../../Page/CardsPage/PostCards';
 import axios from "axios";
-import "./Post.css";
-
+import BlogCards from '../CardsPage/BlogCard';
 function RecentAddPost(props) {
   const [posts, setPosts] = useState([]); // Store fetched posts in state
 
@@ -10,7 +8,7 @@ function RecentAddPost(props) {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/v1/postData");
+        const response = await axios.get("http://localhost:8000/api/v2/BlogData");
         console.log(response.data);
         setPosts(response.data); // Update the state with fetched data
       } catch (error) {
@@ -35,35 +33,17 @@ function RecentAddPost(props) {
           {/* Map over the fetched posts instead of static data */}
           {posts.map((Data, index) => (
             <div key={index}>
-              <Cards 
+              <BlogCards
+                image={Data.image} 
+                content={Data.content} 
                 title={Data.title} 
-                Donate_Amount={Data.Donate_Amount} 
-                Description={Data.Description} 
-                Location={Data.Location} 
-                pincode={Data.pincode} 
-                contact={Data.contact} 
+                author={Data.author} 
               />
             </div>
           ))}
           
           {/* Filtered results when search input is provided */}
-          {/* {!props.recentPost && filteredData.length > 0 && filteredData.map((Data, index) => (
-            <div key={index}>
-              <Cards 
-                title={Data.title} 
-                Donate_Amount={Data.Donate_Amount} 
-                Description={Data.Description} 
-                Location={Data.Location} 
-                pincode={Data.pincode} 
-                contact={Data.contact} 
-              />
-            </div>
-          ))} */}
-
-          {/* Show message if no matches found */}
-          {/* {!props.recentPost && filteredData.length === 0 && (
-            <div>No results found</div>
-          )} */}
+         
         </div>
         
         <div className='DonateHome_btn' style={{ marginTop: "15px" }}>

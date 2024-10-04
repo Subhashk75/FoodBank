@@ -1,4 +1,4 @@
-export const postData =[
+export let postData =[
     {
        id:1,
        title:"Food Donated Today",
