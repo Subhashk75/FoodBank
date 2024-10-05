@@ -18,6 +18,7 @@ import HomePage from './Page/HomePage/HomePage.jsx';
 import BlogAndNew from './components/BlogSection/BlogAndNew.jsx';
 import FQApage from './Page/FQAPage/FQApage.jsx';
 import BlogForm from './Page/BlogFromPage/BlogFrom.jsx';
+import DonateProcess from './components/DonateFormProcess/DonateProcess.jsx';
  // call createBrowserRouter for routing different pages
 const appRouter = createBrowserRouter([
   {
@@ -67,6 +68,9 @@ const appRouter = createBrowserRouter([
       {
         path:"/BlogFrom",
         element:<BlogForm/>
+      },{
+        path:"/DanateProcess",
+        element:<DonateProcess/>
       }
     ],
   },

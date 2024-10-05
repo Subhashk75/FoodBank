@@ -1,21 +1,32 @@
 import React from 'react';
-import "../../components/BlogSection/Blog.css"
-// import Nav from 'react-bootstrap/Nav';
+import './BlogCards.css'; // Importing CSS file for styling
+
 const BlogCard = (props) => {
   return (
     <>
-
-    {props.title!=null? <>
-    <div style={{display:"flex" ,flexDirection:"column"}}>
-     <div className='Card-Container'>
-      <img src={props.image} alt='Profile Picture' style={{ width: "85px", height: "85px", borderRadius: "50%" }} />
-      <h3>{props.title}</h3>
-      <p>{props.content}</p>
-      <p>{props.author}</p>
-
-      </div></div> </>:<> {console.log("not blog section")} </>}
-
-  </>
+      {props.title ? (
+        <div className='blog-card-container'>
+          <div className='blog-card-box'>
+          <div className='blog-card-content'>
+            <img
+              src={props.image}
+              alt='Profile'
+              className='blog-card-image'
+            />
+            <div className='blog-text-contents'>
+              <h3 className='blog-card-title'> <strong> Title :</strong>{props.title}</h3>
+              <p className='blog-card-content-text'><strong>Contents :</strong>{props.content}</p>
+              <p className='blog-card-author'>By {props.author}</p>
+            </div>
+          </div>
+          </div>
+        </div>
+      ) : (
+        <>
+          {console.log('Not a blog section')}
+        </>
+      )}
+    </>
   );
 };
 

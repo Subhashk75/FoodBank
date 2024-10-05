@@ -19,6 +19,7 @@ function RecentAddPost(props) {
     };
 
     fetchPosts(); // Call the async function inside useEffect
+    console.log(posts)
   }, []);
 
   // Filter the posts based on the search input
@@ -28,7 +29,9 @@ function RecentAddPost(props) {
 
   return (
     <div>
-      <h1>Recent Add Post</h1><br />
+        <h1 style={{marginLeft:"10px" ,marginTop:"20px" , display:"flex" ,alignItems:"center" ,justifyContent:"center"}}  >RecentAddPost</h1>
+        <hr class="custom-hr" />
+
 
       <div className='about-team' style={{ backgroundColor: "transparent", border: "none" }}>
         <div className='team-cards-container'>
@@ -36,12 +39,14 @@ function RecentAddPost(props) {
           {posts.map((Data, index) => (
             <div key={index}>
               <Cards 
-                title={Data.title} 
-                Donate_Amount={Data.Donate_Amount} 
-                Description={Data.Description} 
-                Location={Data.Location} 
+                foodName={Data.foodName} 
+                quantity={Data.quantity} 
+                mealType={Data.mealType} 
+                address={Data.address} 
                 pincode={Data.pincode} 
-                contact={Data.contact} 
+                phoneNo={Data.phoneNo} 
+                randomString={Data.randomString} 
+
               />
             </div>
           ))}
@@ -66,11 +71,10 @@ function RecentAddPost(props) {
           )} */}
         </div>
         
-        <div className='DonateHome_btn' style={{ marginTop: "15px" }}>
+        <div className='DonateHomes_btn' style={{ marginTop: "15px" }}>
           <button
             type="button"
             onClick={() => console.log(posts)}
-            className="w-5 bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300"
           >
             Donate Now
           </button>

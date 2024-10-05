@@ -10,12 +10,13 @@ const AcceptForm = () => {
     const [district, setDistrict] = useState("Patna");
     const [address, setAddress] = useState("");
     const [pincode, setPinCode] = useState("");
+    const [randomKey ,setRandomKey]=useState("")
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Basic Validation to check required fields
-        if (!fullName || !personcount || !email || !phoneNo || !address || !pincode) {
+        if (!fullName || !personcount || !email || !phoneNo || !address || !pincode ||!randomKey) {
             alert("All fields are required");
             return;
         }
@@ -28,7 +29,8 @@ const AcceptForm = () => {
                 phoneNo,
                 pincode,
                 address,
-                district
+                district,
+                randomKey
             });
 
             console.log("Successfully sent email:", response.data);
@@ -45,6 +47,10 @@ const AcceptForm = () => {
                     <label className="parent-label">
                         <p>NGO Name</p>
                         <input id="fullName" style={{ height: "34px" }} type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} />
+                    </label><br />
+                    <label className="parent-label">
+                        <p> Enter Your Card key :</p>
+                        <input id="randomKey" style={{ height: "34px" }} type="text" value={randomKey} onChange={(e) => setRandomKey(e.target.value)} />
                     </label><br />
                     <label className="parent-label">
                         <p>Email</p>

@@ -19,6 +19,8 @@ const BlogAndNew = () => {
     };
 
     fetchPosts(); // Call the async function inside useEffect
+
+    console.log(posts);
   }, []);
 
   return (
@@ -26,6 +28,7 @@ const BlogAndNew = () => {
       <h1>Blog Section</h1>
       <div className='blog-cards-container'>
         {/* Map over the fetched posts instead of static data */}
+        <div className='blog-cards-box'>
         {posts.map((Data, index) => (
           <div key={index} className='blog-card-wrapper'>
             <BlogCard
@@ -36,6 +39,7 @@ const BlogAndNew = () => {
             />
           </div>
         ))}
+        </div>
       </div>
     </div>
   )

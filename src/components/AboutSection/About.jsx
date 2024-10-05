@@ -33,7 +33,8 @@ const About = () => {
   };
   return (
     <>
-        <h1 style={{marginLeft:"10px" ,marginTop:"20px" }}  >About Us</h1>
+        <h1 style={{marginLeft:"10px" ,marginTop:"20px" , display:"flex" ,alignItems:"center" ,justifyContent:"center"}}  >About Us</h1>
+        <hr class="custom-hr" />
 
         <div className='about-container'>
 
@@ -72,7 +73,8 @@ const About = () => {
         </div>
 
         </div>
-        <h1 style={{marginLeft:"10px" ,marginTop:"20px" }}  >OUR MISSION</h1>
+        <h1 style={{marginLeft:"10px" ,marginTop:"20px"  , display:"flex" ,alignItems:"center" ,justifyContent:"center"}}  >OUR MISSION</h1>
+        <hr class="custom-hr" />
 
         <div className='mission-container' style={{ marginTop: "10px", backgroundColor: "transparent", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", padding: "20px" }}>
            < div className='mission-image'>

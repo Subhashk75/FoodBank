@@ -7,6 +7,16 @@
     border-radius: 10px;      /* Rounded corners */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
+.custom-hr {
+  border: 2px solid black; /* Remove the default border */
+  height: 2px; /* Set the height of the line */
+  background-color: #333; /* Line color */
+  margin: 20px 0; /* Spacing above and below the line */
+  width: 80%; /* Width of the line */
+  margin-left: auto; /* Center the line */
+  margin-right: auto; /* Center the line */
+}
+
 
 /* Media query for screens smaller than 768px (like tablets or small laptops) */
 @media screen and (max-width: 768px) {

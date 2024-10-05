@@ -11,11 +11,15 @@ const Cards = (props) => {
       <div className='Card-Container' >
     <img src="src/assets/images 1.png" alt='Profile Picture' style={{ width: "85px", height: "85px", borderRadius: "50%" }} />
 
-      <h3> <strong>title:</strong> {props.title}</h3>
-      <p><strong>Description:</strong>  {props.Description}</p>
-      <p> <strong>Donate_Amount:</strong> {props.Donate_Amount} </p> 
-      <p>  <strong>Location :</strong>  {props.Location}</p>
-      <p> <strong>Contact:</strong> {props.contact}</p>
+      <h3> <strong>title:</strong> {props.foodName}</h3>
+      <p><strong>mealType:</strong>  {props.mealType}</p>
+      <p> <strong>Donate_Amount:</strong> {props.quantity} </p> 
+      <p>  <strong>Location :</strong>  {props.address}</p>
+      <p>  <strong>Pincode :</strong>  {props.pincode}</p>
+
+      <p> <strong>Contact:</strong> {props.phoneNo}</p>
+      <p> <strong>RandomString:</strong> {props.randomString}</p>
+
    
       <Nav.Link href="http://localhost:5173/AcceptFrom"  style={{backgroundColor:"blueviolet"}}> Contact Me</Nav.Link>
 

@@ -1,0 +1,73 @@
+/* General container styling */
+.process-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .process-about-container {
+    background-color: #f0f4f8;
+    border: 1px solid #e1e8ed;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .process-about-container strong {
+    color: #2c3e50;
+    font-size: 1.2em;
+  }
+  
+  /* Step container styling */
+  .process-step-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .step {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 30%;
+    min-width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .step h2 {
+    color: #34495e;
+    margin-bottom: 10px;
+  }
+  
+  .step p {
+    font-size: 1em;
+    color: #7f8c8d;
+  }
+  
+  .step img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .step-button {
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .step-button:hover {
+    background-color: #27ae60;
+  }
+  

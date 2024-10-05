@@ -1,8 +1,18 @@
-.DonateHome_btn{
+.DonateHomes_btn{
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 .about-team:hover{
     box-shadow: 3px 3px 3px rgb(132, 131, 130);
 }
+.custom-hr {
+    border: 2px solid black; /* Remove the default border */
+    height: 2px; /* Set the height of the line */
+    background-color: #333; /* Line color */
+    margin: 20px 0; /* Spacing above and below the line */
+    width: 80%; /* Width of the line */
+    margin-left: auto; /* Center the line */
+    margin-right: auto; /* Center the line */
+  }

@@ -3,8 +3,8 @@ import StackHolderCards from '../../Page/CardsPage/StackHolderCards';
 const Contact=()=>{
   return (
       <>
-       <h1> StackHolder </h1><br />
-
+        <h1 style={{marginLeft:"10px" ,marginTop:"20px" , display:"flex" ,alignItems:"center" ,justifyContent:"center"}}  > Volunteries</h1>
+        <hr class="custom-h" style={{border:"2px solid black " ,height:"2px",backgroundColor:"chocolate" ,margin:"20px auto" ,width:"80%",}} />
       <div className='about-team'>
         <div className='team-cards-container' style={{backgroundColor:"transparent" ,border:"none"}}>
           <StackHolderCards keyPoint="Subhash$123" Name='Rajesh kumawat' Description='Rajesh Kumawat is a third-year Computer Science student at the National Institute of Technology Patna. He possesses a strong understanding of computer science principles and their societal impact. Rajesh excels in frontend development, particularly in ReactJS.' />
