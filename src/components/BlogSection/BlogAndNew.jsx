@@ -2,47 +2,73 @@ import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import BlogCard from "../../Page/CardsPage/BlogCard";
 import "./Blog.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const BlogAndNew = () => {
   const [posts, setPosts] = useState([]); // Store fetched posts in state
+
+  // Function to retrieve cookie
+  function getCookie(name) {
+    const value = `; ${document.cookie}`;
+    const parts = value.split(`; ${name}=`);
+    if (parts.length === 2) return parts.pop().split(';').shift();
+    return null;  // Return null if the cookie doesn't exist
+  }
 
   // Fetch data from API when component mounts
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/api/v2/BlogData");
-        console.log(response.data);
-        setPosts(response.data); // Update the state with fetched data
+        const blogData = getCookie('blogData') || 'defaultToken';  // Example of using cookie
+        console.log("Cookie Data: ", blogData);
+
+        const response = await axios.get("http://localhost:8000/api/v2/BlogData", {
+          headers: {
+            Authorization: `Bearer ${blogData}`  // Send cookie in request headers (optional)
+          }
+        });
+        const responseData = response.data.reverse();
+        setPosts(responseData); // Update the state with fetched data
       } catch (error) {
         console.error("Error fetching post data:", error);
+        setPosts([]);  // Optionally, handle errors
       }
     };
 
     fetchPosts(); // Call the async function inside useEffect
-
-    console.log(posts);
   }, []);
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3
+  };
 
   return (
     <div className='blog-container'>
       <h1>Blog Section</h1>
-      <div className='blog-cards-container'>
-        {/* Map over the fetched posts instead of static data */}
-        <div className='blog-cards-box'>
-        {posts.map((Data, index) => (
-          <div key={index} className='blog-card-wrapper'>
-            <BlogCard
-              image={Data.image}
-              content={Data.content}
-              title={Data.title}
-              author={Data.author}
-            />
-          </div>
-        ))}
-        </div>
-      </div>
+      {posts.length === 0 ? (
+        <p>No posts available</p>
+      ) : (
+        <Slider {...settings}>
+          {posts.map((Data, index) => (
+            <div key={index} className='blog-card-wrapper'>
+              <BlogCard
+                image={Data.image}
+                content={Data.content}
+                title={Data.title}
+                author={Data.author}
+              />
+            </div>
+          ))}
+        </Slider>
+      )}
     </div>
-  )
-}
+  );
+};
 
 export default BlogAndNew;

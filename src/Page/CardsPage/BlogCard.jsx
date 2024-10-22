@@ -4,6 +4,7 @@ import './BlogCards.css'; // Importing CSS file for styling
 const BlogCard = (props) => {
   return (
     <>
+      <div className='BlogCard-Container'>
       {props.title ? (
         <div className='blog-card-container'>
           <div className='blog-card-box'>
@@ -26,6 +27,7 @@ const BlogCard = (props) => {
           {console.log('Not a blog section')}
         </>
       )}
+      </div>
     </>
   );
 };

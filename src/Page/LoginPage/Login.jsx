@@ -8,11 +8,22 @@ const LoginPage = () => {
   const [isSubmitOpen, setIsSubmitOpen] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false); // Added to disable submit after submission
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
-    setIsSubmitte
-    +
-    d(true); // Disable the submit button
+    try {
+      const response = await axios.post("http://localhost:8000/api/v3/login", {
+          email,
+          password
+      });
+
+      console.log("Successfully sent email:", response.data);
+  } catch (error) {
+      console.log("An error occurred:", error.message);
+  }
+
+
+
+    setIsSubmitted(true); // Disable the submit button
     setIsSubmitOpen(true); // Show the pop-up notification
     setIsDialogOpen(false);
     // Auto-close the pop-up after 3 seconds

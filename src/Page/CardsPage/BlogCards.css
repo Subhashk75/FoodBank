@@ -1,4 +1,8 @@
 /* Container for the blog card */
+ .BlogCard-Container{
+   
+    overflow-y:hidden;
+ }
 .blog-card-container {
     display: flex;
     justify-content: center;
