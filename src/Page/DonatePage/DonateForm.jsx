@@ -7,13 +7,13 @@ const DonateForm = () => {
     const [foodName, setFoodName] = useState("");
     const [mealType, setMealType] = useState("");
     const [category, setCategory] = useState("");
-    const [quantity, setQuantity] = useState("");
+    const [personcount, setPersonCount] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNo, setPhoneNo] = useState("");
     const [district, setDistrict] = useState("Patna");
     const [address, setAddress] = useState("");
     const [pincode, setPinCode] = useState("");
-
+    const [randomString ,setRandomString] =useState(" ");
     // console.log(foodName);
     // console.log(mealType);
     const onChangeMealType = e => {
@@ -26,26 +26,32 @@ const DonateForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
     
+        // Ensure all fields are filled
+        if (!foodName || !mealType || !category || !personcount || !phoneNo || !pincode || !address || !district || !randomString||!email) {
+            alert("Please fill all required fields");
+            return;
+        }
+    
         try {
             const response = await axios.post("http://localhost:8000/api/v1/createPost", {
                 foodName,
-                category,    // Corrected 'category' to 'category'
+                category,
                 mealType,
-                email,
                 phoneNo,
-                quantity,    // Corrected 'quantity' to 'quantity'
+                personcount,
                 pincode,
                 address,
-                district
+                district,
+                randomString,
+                email
             });
     
             console.log("Successfully sent email:", response.data.data[0]);
-            // postData.push(response?.data.data[0]);
-            // console.log(postData);
         } catch (error) {
             console.log("An error occurred:", error.message);
         }
     };
+    
     
     
 
@@ -55,6 +61,12 @@ const DonateForm = () => {
             <h2>Food Donation</h2>
 
                 <form className="donate-form" method="POST" onSubmit={handleSubmit} >
+                <label className="parent-label">
+                        <p> card key  </p>
+                        <input id="random String " style={{ height: "34px" }} type="text" value={randomString} onChange={(e) => {
+                            setRandomString(e.target.value);
+                        }} />
+                    </label><br></br>
 
                     <label className="parent-label">
                         <p> Food Name </p>
@@ -105,8 +117,8 @@ const DonateForm = () => {
 
                     <label className="parent-label">
                         <p> Quantity(person)</p>
-                        <input type="number" name="personCount" value={quantity} style={{ height: "34px" }} onChange={(e) => {
-                            setQuantity(e.target.value);
+                        <input type="number" name="personCount" value={personcount} style={{ height: "34px" }} onChange={(e) => {
+                            setPersonCount(e.target.value);
                         }} />
                     </label ><br></br>
                     <label className="parent-label">

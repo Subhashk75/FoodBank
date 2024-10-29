@@ -10,13 +10,13 @@ const AcceptForm = () => {
     const [district, setDistrict] = useState("Patna");
     const [address, setAddress] = useState("");
     const [pincode, setPinCode] = useState("");
-    const [randomKey ,setRandomKey]=useState("")
+    const [randomString ,setRandomString]=useState("")
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         // Basic Validation to check required fields
-        if (!fullName || !personcount || !email || !phoneNo || !address || !pincode ||!randomKey) {
+        if (!fullName || !personcount || !phoneNo || !address || !pincode ||!randomString||!email) {
             alert("All fields are required");
             return;
         }
@@ -24,13 +24,13 @@ const AcceptForm = () => {
         try {
             const response = await axios.post("http://localhost:8000/api/v2/acceptForm", {
                 fullName,
-                email,
+                 email,
                 personcount,
                 phoneNo,
                 pincode,
                 address,
                 district,
-                randomKey
+                randomString
             });
 
             console.log("Successfully sent email:", response.data);
@@ -50,7 +50,7 @@ const AcceptForm = () => {
                     </label><br />
                     <label className="parent-label">
                         <p> Enter Your Card key :</p>
-                        <input id="randomKey" style={{ height: "34px" }} type="text" value={randomKey} onChange={(e) => setRandomKey(e.target.value)} />
+                        <input id="randomString" style={{ height: "34px" }} type="text" value={randomString} onChange={(e) => setRandomString(e.target.value)} />
                     </label><br />
                     <label className="parent-label">
                         <p>Email</p>

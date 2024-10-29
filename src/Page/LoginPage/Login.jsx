@@ -1,42 +1,41 @@
 import React, { useState } from 'react';
 import './Login.css';
+import axios from 'axios'; // Make sure axios is imported
 
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isDialogOpen, setIsDialogOpen] = useState(true);
   const [isSubmitOpen, setIsSubmitOpen] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false); // Added to disable submit after submission
+  const [isSubmitted, setIsSubmitted] = useState(false); // To disable submit after submission
 
-  const handleSubmit = async(e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post("http://localhost:8000/api/v3/login", {
-          email,
-          password
+        email,
+        password
       });
-
-      console.log("Successfully sent email:", response.data);
-  } catch (error) {
-      console.log("An error occurred:", error.message);
-  }
-
-
+      console.log("Successfully sent:", response.data);
+    } catch (error) {
+      console.error("An error occurred:", error.message);
+    }
 
     setIsSubmitted(true); // Disable the submit button
     setIsSubmitOpen(true); // Show the pop-up notification
     setIsDialogOpen(false);
+    
     // Auto-close the pop-up after 3 seconds
     setTimeout(() => {
       setIsSubmitOpen(false);
-    }, 1000);
+    }, 3000); // Increased to 3 seconds for better user experience
   };
 
   const closeDialog = () => {
     setIsDialogOpen(false); // Close dialog when the button is clicked
   };
 
-  const closePop_Up_Dialog = () => {
+  const closePopUpDialog = () => {
     setIsSubmitOpen(false); // Manually close the pop-up
   };
 
@@ -98,13 +97,14 @@ const LoginPage = () => {
                 </button>
               </div>
             </form>
+            <p> Not a Member:<a href='/signup'>SignUp  Here</a> </p>
 
             {/* Submit Pop-up Notification */}
             {isSubmitOpen && (
               <div className="fixed bottom-4 right-4 bg-green-500 text-white p-4 rounded shadow-lg">
                 Form submitted successfully!
                 <button
-                  onClick={closePop_Up_Dialog}
+                  onClick={closePopUpDialog}
                   className="mt-4 ml-6 pl-4 w-full bg-red-600 text-white py-2 rounded-md hover:bg-red-700 focus:outline-none focus:ring-4 focus:ring-red-300"
                 >
                   Close

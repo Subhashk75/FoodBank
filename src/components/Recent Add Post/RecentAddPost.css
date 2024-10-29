@@ -1,0 +1,58 @@
+.blog-section {
+  width: 100%;
+  padding: 20px;
+  position: relative;
+}
+
+.section-header h3 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.section-header h1 {
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.team-box {
+  margin-top: 30px;
+  padding: 10px;
+  position: relative;
+}
+
+.mySwiper {
+  padding: 20px 0;
+}
+
+.swiper-button-prev, .swiper-button-next {
+  color: #000; /* Set button color */
+  font-size: 24px; /* Set button size */
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+.swiper-button-prev:hover, .swiper-button-next:hover {
+  color: #555; /* Change color on hover */
+}
+.custom-hr {
+  border: 2px solid black; /* Remove the default border */
+  height: 2px; /* Set the height of the line */
+  background-color: #333; /* Line color */
+  margin: 20px 0; /* Spacing above and below the line */
+  width: 80%; /* Width of the line */
+  margin-left: auto; /* Center the line */
+  margin-right: auto; /* Center the line */
+}

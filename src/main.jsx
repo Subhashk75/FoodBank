@@ -7,7 +7,6 @@ import App from './App.jsx'
 import About from './components/AboutSection/About.jsx'
 import StackHolder from './components/stackHolder/StackHolder.jsx'
 import DonateForm from './Page/DonatePage/DonateForm.jsx'
-import Profile from './components/Profile'
 import Error from './Page/ErrorPage/Error.jsx'
 import RecentAddPost from './components/Recent Add Post/RecentAddPost.jsx';
 import './index.css'
@@ -57,10 +56,10 @@ const appRouter = createBrowserRouter([
         path: "/BlogAndNew",
         element: <BlogAndNew/>,
       },
-      {
-        path: "/profile",
-        element: <Profile />,
-      },
+      // {
+      //   path: "/profile",
+      //   element: <profile />,
+      // },
       {
         path:"/donatefood",
         element:<DonateForm/>
