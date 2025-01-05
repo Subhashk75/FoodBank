@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
-import './about.css'
+import "../../styles/about.css"
 import image1 from '../../assets/3028767_6d115.jpg'
 import image2 from '../../assets/foodbankst-flow.webp'
 import image3 from '../../assets/Untitled-design-3.png'

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import BlogCard from "../../Page/CardsPage/BlogCard";
-import "./Blog.css";
+import "../../styles/Blog.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

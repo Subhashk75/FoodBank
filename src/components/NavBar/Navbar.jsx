@@ -41,28 +41,28 @@ const NavScrollExample = () => {
 
             {/* About Us Dropdown */}
             <NavDropdown title="About Us" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="http://localhost:5173/about">Our Mission</NavDropdown.Item>
+              <NavDropdown.Item href="/about">Our Mission</NavDropdown.Item>
               <NavDropdown.Item href="#team">Our Team</NavDropdown.Item>
             </NavDropdown>
 
             {/* Service Dropdown */}
             <NavDropdown title="Service" id="navbarScrollingDropdown">
               <NavDropdown title="StackHolder" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="http://localhost:5173/login">Login</NavDropdown.Item>
-                <NavDropdown.Item href="http://localhost:5173/signup">Sign Up</NavDropdown.Item>
-                <NavDropdown.Item href="http://localhost:5173/donatefood">Food Donate</NavDropdown.Item>
+                <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
+                <NavDropdown.Item href="/donatefood">Food Donate</NavDropdown.Item>
               </NavDropdown>
               <NavDropdown title="NGO" id="navbarScrollingDropdown">
-                <NavDropdown.Item href="http://localhost:5173/login">Login</NavDropdown.Item>
-                <NavDropdown.Item href="http://localhost:5173/signup">Sign Up</NavDropdown.Item>
-                <NavDropdown.Item href="http://localhost:5173/RecentAddPost">Food Distribution</NavDropdown.Item>
+                <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                <NavDropdown.Item href="/signup">Sign Up</NavDropdown.Item>
+                <NavDropdown.Item href="/RecentAddPost">Food Distribution</NavDropdown.Item>
               </NavDropdown>
             </NavDropdown>
 
             {/* Events Dropdown */}
             <NavDropdown title="Events" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="http://localhost:5173/FQA">FQA</NavDropdown.Item>
-              <NavDropdown.Item href="http://localhost:5173/BlogAndNew">Blog and News</NavDropdown.Item>
+              <NavDropdown.Item href="/FQA">FQA</NavDropdown.Item>
+              <NavDropdown.Item href="/BlogAndNew">Blog and News</NavDropdown.Item>
             </NavDropdown>
 
             {/* Contact Dropdown */}

@@ -6,7 +6,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules'; // Import Swiper modules
 import Cards from '../../Page/CardsPage/PostCards';
-import './RecentAddPost.css'; // Add custom styling
+import '../../styles/RecentAddPost.css'; // Add custom styling
 
 const RecentAddPost = () => {
   const [posts, setPosts] = useState([]);

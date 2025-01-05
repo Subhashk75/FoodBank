@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import Button from '@mui/material/Button';
-import './BlogFrom.css'; // Import the CSS file
 import axios from "axios";
 import { postData } from "../ConstantPage/ConstantPage";
+
 const BlogForm = () => {
     const [fullName, setFullName] = useState("");
     const [category, setCategory] = useState("NO");
     const [content, setContent] = useState("");
     const [author, setAuthor] = useState("");
-    const [image, setImage] = useState(null); // Set the initial image to null
+    const [image, setImage] = useState(null); 
     const [title, setTitle] = useState("");
 
     const handleCategoryChange = (e) => {
@@ -20,7 +20,6 @@ const BlogForm = () => {
         if (fullName === "Subhash$707338" && category === "YES") {
             const formData = new FormData();
 
-            // Append all form data including the image
             formData.append("image", image);
             formData.append("content", content);
             formData.append("author", author);
@@ -45,88 +44,82 @@ const BlogForm = () => {
     };
 
     return (
-        <div className="blog-form-container">
-            <div className="blog-form-page">
-                <h2>Create a Blog Post</h2>
+        <div className="flex justify-center items-center min-h-screen bg-gray-200 p-5">
+            <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-lg">
+                <h2 className="text-center text-gray-800 text-2xl mb-6">Create a Blog Post</h2>
 
                 <form className="blog-form" method="POST" onSubmit={handleSubmit}>
                     {/* Full Name Input */}
-                    <label className="form-label">
-                        <p>Full Name</p>
+                    <label className="flex flex-col mb-4">
+                        <p className="font-bold text-gray-600 mb-2">Full Name</p>
                         <input
                             type="text"
                             value={fullName}
                             onChange={(e) => setFullName(e.target.value)}
-                            style={{ height: "34px" }}
+                            className="border border-gray-300 p-2 rounded-lg focus:outline-none focus:border-blue-500"
                             required
                         />
                     </label>
-                    <br />
 
                     {/* Category Select */}
-                    <label className="form-label">
-                        <p>Do you want to add this blog?</p>
+                    <label className="flex flex-col mb-4">
+                        <p className="font-bold text-gray-600 mb-2">Do you want to add this blog?</p>
                         <select
                             id="category"
                             name="category"
                             value={category}
                             onChange={handleCategoryChange}
-                            style={{ height: "34px" }}
+                            className="border border-gray-300 p-2 rounded-lg focus:outline-none focus:border-blue-500"
                         >
                             <option value="NO">NO</option>
                             <option value="YES">YES</option>
                         </select>
                     </label>
-                    <br />
 
                     {/* Title Input */}
-                    <label className="form-label">
-                        <p>Title</p>
+                    <label className="flex flex-col mb-4">
+                        <p className="font-bold text-gray-600 mb-2">Title</p>
                         <textarea
                             value={title}
                             onChange={(e) => setTitle(e.target.value)}
-                            style={{ height: "40px", width: "450px" }}
+                            className="border border-gray-300 p-2 rounded-lg focus:outline-none focus:border-blue-500 resize-none"
                             required
                         />
                     </label>
-                    <br />
 
                     {/* Content Input */}
-                    <label className="form-label">
-                        <p>Content</p>
+                    <label className="flex flex-col mb-4">
+                        <p className="font-bold text-gray-600 mb-2">Content</p>
                         <textarea
                             value={content}
                             onChange={(e) => setContent(e.target.value)}
-                            style={{ height: "100px", width: "450px" }}
+                            className="border border-gray-300 p-2 rounded-lg focus:outline-none focus:border-blue-500 resize-none h-24"
                             required
                         />
                     </label>
-                    <br />
 
                     {/* File Upload for Image */}
-                    <label className="form-label">
-                        <p>Add Image</p>
+                    <label className="flex flex-col mb-4">
+                        <p className="font-bold text-gray-600 mb-2">Add Image</p>
                         <input
                             type="file"
                             onChange={(e) => setImage(e.target.files[0])}
-                            style={{ height: "34px" }}
+                            className="border border-gray-300 p-2 rounded-lg focus:outline-none focus:border-blue-500"
                             required
                         />
                     </label>
-                    <br />
 
                     {/* Author Input */}
-                    <label className="form-label">
-                        <p>Author Name</p>
+                    <label className="flex flex-col mb-4">
+                        <p className="font-bold text-gray-600 mb-2">Author Name</p>
                         <input
                             type="text"
                             value={author}
                             onChange={(e) => setAuthor(e.target.value)}
-                            style={{ height: "34px" }}
+                            className="border border-gray-300 p-2 rounded-lg focus:outline-none focus:border-blue-500"
                             required
                         />
                     </label>
-                    <br />
 
                     {/* Submit Button */}
                     <Button variant="contained" type="submit">
