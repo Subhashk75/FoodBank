@@ -5,6 +5,7 @@ import "../../styles/Blog.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { userBlogPost } from '../../Page/ConstantPage/Backend_URL';
 
 const BlogAndNew = () => {
   const [posts, setPosts] = useState([]); // Store fetched posts in state
@@ -24,7 +25,7 @@ const BlogAndNew = () => {
         const blogData = getCookie('blogData') || 'defaultToken';  // Example of using cookie
         console.log("Cookie Data: ", blogData);
 
-        const response = await axios.get("http://localhost:8000/api/v2/BlogData", {
+        const response = await axios.get(userBlogPost, {
           headers: {
             Authorization: `Bearer ${blogData}`  // Send cookie in request headers (optional)
           }

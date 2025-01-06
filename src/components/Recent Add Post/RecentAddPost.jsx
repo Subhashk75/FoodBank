@@ -7,6 +7,7 @@ import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules'; // Import Swiper modules
 import Cards from '../../Page/CardsPage/PostCards';
 import '../../styles/RecentAddPost.css'; // Add custom styling
+import { userRecentAddPost } from '../../Page/ConstantPage/Backend_URL';
 
 const RecentAddPost = () => {
   const [posts, setPosts] = useState([]);
@@ -25,7 +26,7 @@ const RecentAddPost = () => {
     const fetchPosts = async () => {
       try {
         const postData = getCookie('postData') || 'defaultToken';
-        const response = await axios.get('http://localhost:8000/api/v1/postData', {
+        const response = await axios.get(userRecentAddPost, {
           headers: { Authorization: `Bearer ${postData}` },
         });
         setPosts(response.data.reverse());

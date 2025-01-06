@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Button from '@mui/material/Button';
 import axios from "axios";
 import { postData } from "../ConstantPage/ConstantPage";
+import { userCreateBlog } from "../ConstantPage/Backend_URL";
 
 const BlogForm = () => {
     const [fullName, setFullName] = useState("");
@@ -26,7 +27,7 @@ const BlogForm = () => {
             formData.append("title", title);
 
             try {
-                const response = await axios.post("http://localhost:8000/api/v2/blogs", formData, {
+                const response = await axios.post(userCreateBlog, formData, {
                     headers: {
                         "Content-Type": "multipart/form-data",
                     },

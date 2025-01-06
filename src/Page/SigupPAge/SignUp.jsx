@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import '../../styles/Login.css';
 import axios from 'axios';
-
+import { userSignUp } from '../ConstantPage/Backend_URL';
 const SignUpPage = () => {
   const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
@@ -14,7 +14,7 @@ const SignUpPage = () => {
     setErrorMessage(''); // Reset any previous errors
     
     try {
-      const response = await axios.post("http://localhost:8000/api/v3/signup", {
+      const response = await axios.post(userSignUp, {
         fullName,
         email,
         password

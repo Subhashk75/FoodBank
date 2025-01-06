@@ -3,6 +3,7 @@ import { useState } from "react";
 import Button from '@mui/material/Button';
 import "./DonateFrom.css"
 import axios from "axios";
+import { userCreatePost } from "../ConstantPage/Backend_URL";
 const DonateForm = () => {
     const [foodName, setFoodName] = useState("");
     const [mealType, setMealType] = useState("");
@@ -33,7 +34,7 @@ const DonateForm = () => {
         }
     
         try {
-            const response = await axios.post("http://localhost:8000/api/v1/createPost", {
+            const response = await axios.post(userCreatePost, {
                 foodName,
                 category,
                 mealType,

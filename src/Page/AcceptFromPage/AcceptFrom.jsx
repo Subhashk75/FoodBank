@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from '@mui/material/Button';
 import axios from "axios";
+import { userAcceptFrom } from "../ConstantPage/Backend_URL";
 
 const AcceptForm = () => {
     const [fullName, setFullName] = useState("");  
@@ -22,7 +23,7 @@ const AcceptForm = () => {
         }
 
         try {
-            const response = await axios.post("http://localhost:8000/api/v2/acceptForm", {
+            const response = await axios.post(userAcceptFrom, {
                 fullName,
                  email,
                 personcount,
