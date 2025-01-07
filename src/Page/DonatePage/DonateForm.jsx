@@ -32,6 +32,18 @@ const DonateForm = () => {
             alert("Please fill all required fields");
             return;
         }
+        if (!/^\d{10}$/.test(phoneNo)) {
+            alert("Enter a valid 10-digit phone number");
+            return;
+        }
+        if (!/^\d{6}$/.test(pincode)) {
+            alert("Enter a valid 6-digit pin code");
+            return;
+        }
+        if (!/\S+@\S+\.\S+/.test(email)) {
+            alert("Enter a valid email address");
+            return;
+        }
     
         try {
             const response = await axios.post(userCreatePost, {
@@ -64,7 +76,7 @@ const DonateForm = () => {
                 <form className="donate-form" method="POST" onSubmit={handleSubmit} >
                 <label className="parent-label">
                         <p> card key  </p>
-                        <input id="random String " style={{ height: "34px" }} type="text" value={randomString} onChange={(e) => {
+                        <input id="random String " style={{ height: "34px" }} type="text" placeholder="first login then check you Email" value={randomString} onChange={(e) => {
                             setRandomString(e.target.value);
                         }} />
                     </label><br></br>
