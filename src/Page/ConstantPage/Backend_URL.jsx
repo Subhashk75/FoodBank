@@ -1,4 +1,4 @@
-const BASE_URL = "https://food-bank-xzu3.onrender.com";
+const BASE_URL = "https://food-bank-ulc5.onrender.com";
 
 export const userSignUp = `${BASE_URL}/api/v3/signup`;
 export const userLogin = `${BASE_URL}/api/v3/login`;

@@ -24,12 +24,14 @@ const BlogAndNew = () => {
       try {
         const blogData = getCookie('blogData') || 'defaultToken';  // Example of using cookie
         console.log("Cookie Data: ", blogData);
+        console.log("API URL:", userBlogPost);
 
         const response = await axios.get(userBlogPost, {
           headers: {
             Authorization: `Bearer ${blogData}`  // Send cookie in request headers (optional)
           }
         });
+        
         const responseData = response.data.reverse();
         setPosts(responseData); // Update the state with fetched data
       } catch (error) {
