@@ -1,26 +1,26 @@
 import React from 'react';
-import './BlogCardStyles.css'; // Link to the CSS file
+import style from './BlogCardStyles.module.css'; // Link to the CSS file
 
 const BlogCard = (props) => {
   return (
-    <div className="blogcard-container">
+    <div className={style.blogcard-container}>
       {props.title ? (
-        <div className="blogcard-wrapper">
-          <div className="blogcard">
+        <div className={style.blogcard-wrapper}>
+          <div className={style.blogcard}>
             
               <img
                 src={props.image}
                 alt="Profile"
-                className="blogcard-image"
+                className={style.blogcard-image}
               />
-              <div className="blogcard-content">
-                <h3 className="blogcard-title">
+              <div className={style.blogcard-content}>
+                <h3 className={style.blogcard-title}>
                   <strong>Title: </strong>{props.title}
                 </h3>
-                <p className="blogcard-description">
+                <p className={style.blogcard-description}>
                   <strong>Contents: </strong>{props.content}
                 </p>
-                <p className="blogcard-author">By {props.author}</p>
+                <p className={style.blogcard-author}>By {props.author}</p>
               </div>
           
           </div>
